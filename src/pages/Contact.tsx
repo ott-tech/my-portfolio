@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 import "./Contact.css"
 
 export const ContactSection: React.FC = () => {
@@ -7,14 +8,37 @@ export const ContactSection: React.FC = () => {
         email: "",
         message: ""
     });
+    const [loading, setLoading] = useState(false);
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
-  console.log("Form Data Submitted:", formData);
+  setLoading(true);
 
-  alert("Message Sent! the backend will be implemented soon");
+  const templateParams = {
+    name: formData.name,
+    email: formData.email,
+    message: formData.message,
+  };
 
-  setFormData({ name: "", email: "", message: "" });
+  emailjs
+    .send(
+        "service_wah136j",
+        "template_jbbak0w",
+        templateParams,
+        "gYAqgn4lo7O5iRN1l"
+    )
+    .then(
+        (response) => {
+        setLoading(false);
+        setFormData({ name: "", email: "", message: "" });
+        alert("Message Sent! Your message has been delivered to my inbox");
+        console.log("SUCCESS", response.status, response.text);
+    })
+    .catch((error) => {
+        setLoading(false);
+        alert("Failed to send message. Please try again later.");
+        console.error("Error sending email:", error);
+    });
 };
 
 return (
@@ -39,7 +63,11 @@ return (
                     <label htmlFor="message">Your Message</label>
                     <textarea id="message" value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})}/>
                 </div>
-                <button type="submit" className="contact-submit-btn">Send Message</button>
+                <button type="submit" 
+                disabled={loading}
+                className= "contact-submit-btn">
+                    {loading ? "Sending..." : "Send Message"}
+                </button>
             </form>
         </div>
     </section>
