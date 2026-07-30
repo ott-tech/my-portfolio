@@ -74,3 +74,57 @@
   border: none;
   border-radius: 9999px;    /* Forms a clean pill shape */
 }
+
+/* Tech Skill Badges */
+.project-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.skill-badge {
+  background-color: #f1f5f9;
+  color: #334155;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+/* Action Buttons Container */
+.project-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+/* Base Link Buttons */
+.btn-demo, .btn-github {
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-demo {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.btn-demo:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-github {
+  background-color: transparent;
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+}
+
+.btn-github:hover {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+}

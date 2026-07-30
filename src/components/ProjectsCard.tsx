@@ -1,13 +1,15 @@
 import "./ProjectsCard.css"
 
-interface ProjectsCardProps {
+export interface ProjectsCardProps {
     image: string;
     title: string;
     description: string;
     skills: string[];
+    githubURL: string;
+    liveURL?: string;
 }
 
-function ProjectsCard({ image, title, description, skills }: ProjectsCardProps) {
+function ProjectsCard({ image, title, description, skills, githubURL, liveURL }: ProjectsCardProps) {
     return (
         <article className="project-card">
             <div className="card-img">
@@ -28,6 +30,27 @@ function ProjectsCard({ image, title, description, skills }: ProjectsCardProps) 
                         <span key={index} className="skill-badge">{skill}</span>
                     ))}
                 </div>
+
+                <div className="card-actions" style={{ display: "flex", gap: "12px", marginTop: "16px" }}>
+                    {liveURL && (
+                        <a
+                            href={liveURL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-demo"
+                        >
+                            Live Demo ↗
+                        </a>
+                    )}
+                    <a
+                        href={githubURL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-github"
+                    >
+                        GitHub ↗
+                    </a>
+                </div>  
             </div>
         </article>
     )
