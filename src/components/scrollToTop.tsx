@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { ChevronUp } from "lucide-react";
 
 export function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
@@ -50,7 +51,7 @@ export function ScrollToTop() {
         transition: "transform 0.2s ease, background-color 0.2s ease",
       }}
     >
-      ↑
+      <ChevronUp size={28}/>
     </button>
   );
 }
