@@ -1,0 +1,76 @@
+/* src/components/ProjectsCard.css */
+
+/* 1. Overall Card Container Layout */
+.project-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb; /* Subtle neutral-200 border line */
+  border-radius: 12px;       /* Smooth curved corners for modern card aesthetic */
+  overflow: hidden;          /* Forces the child image to clip nicely to the border radius */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;              /* Guarantees all cards match heights in the grid row */
+}
+
+/* Subtle elevation lift when hovering over a project card */
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+}
+
+/* 2. Image Wrapper & Scaling */
+.card-img {
+  width: 100%;
+  height: 200px;             /* Sets a uniform layout block height for all image assets */
+  overflow: hidden;
+  background-color: #f3f4f6; /* Fallback gray background while asset loads */
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;         /* Crops and scales the screenshot perfectly without stretching it */
+}
+
+/* 3. Text & Content Padding Block */
+.card-body {
+  padding: var(--space-20, 20px);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;              /* Pushes the skills badges down uniformly to the bottom edge */
+}
+
+.card-title h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;            /* Deep neutral-900 typography */
+  margin: 0 0 var(--space-8, 8px) 0;
+}
+
+.card-desc p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #4b5563;            /* Soft body neutral-600 contrast */
+  line-height: 1.5;
+  margin: 0 0 var(--space-20, 20px) 0;
+}
+
+/* 4. Skills Badges Row Configuration */
+.card-skills {
+  display: flex;
+  flex-wrap: wrap;           /* Wraps tags gracefully down to a new line if screen shrinks */
+  gap: var(--space-8, 8px);  /* Precise element padding gaps between tech chips */
+  margin-top: auto;          /* Sticks the badge cluster cleanly to the bottom baseline */
+}
+
+/* Turning your skill-button items into pill tags to match mockup layout styles */
+.skill-button {
+  display: inline-block;
+  background-color: #f3f4f6; /* Neutral light tag chip fill */
+  color: #374151;            /* Dark text contrast */
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px var(--space-12, 12px);
+  border: none;
+  border-radius: 9999px;    /* Forms a clean pill shape */
+}

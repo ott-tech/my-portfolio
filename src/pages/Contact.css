@@ -1,0 +1,80 @@
+.contact-section {
+  background-color: #fafafa; /* Subtle light tone variant to separate sections */
+  padding: var(--space-48, 48px) var(--space-24, 24px);
+  border-top: 1px solid #e5e7eb;
+}
+
+.contact-container {
+  max-width: 600px; /* Restricting form width avoids awkward stretching on ultra-wide monitors */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-header h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: var(--space-8, 8px);
+}
+
+.contact-header p {
+  font-size: 15px;
+  color: #4b5563;
+  margin-bottom: var(--space-32, 32px);
+  line-height: 1.5;
+}
+
+.contact-form {
+  text-align: left;
+  background: #ffffff;
+  padding: var(--space-32, 32px);
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.form-group {
+  margin-bottom: var(--space-20, 20px);
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: var(--space-6, 6px);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: var(--space-12, 12px);
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background-color: #ffffff;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+/* Clear focus indicators keep layouts fully accessible */
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--brand-600, #2563eb);
+}
+
+.contact-submit-btn {
+  width: 100%;
+  height: 44px;
+  background-color: var(--brand-600, #2563eb);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.contact-submit-btn:hover {
+  background-color: var(--brand-700, #1d4ed8);
+}

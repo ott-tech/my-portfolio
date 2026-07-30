@@ -1,0 +1,33 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px; /* Setting target height rules */
+  padding: 0 var(--space-24); /* Using our 4px grid tokens */
+  background-color: white;
+  border-bottom: 1px solid var(--neutral-200); /* Allowed sticky/top border */
+}
+
+.logo {
+  font-size: var(--space-16);
+  font-weight: 600; /* Headers/logos take 600 weight */
+  color: var(--neutral-900);
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-24);
+  list-style: none;
+}
+
+.nav-item a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400; /* Standard links take 400 weight */
+  color: var(--neutral-500);
+  transition: color 0.2s ease;
+}
+
+.nav-item a:hover {
+  color: var(--brand-600); /* Changes to interactive brand blue on hover */
+}

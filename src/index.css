@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+:root {
+  /* Brand Colors (Hue 210 - Blue) */
+  --brand-50: hsl(210, 80%, 96%);
+  --brand-600: hsl(210, 58%, 47%);
+  --brand-700: hsl(210, 58%, 39%);
+  --brand-900: hsl(210, 62%, 18%);
+
+  /* Neutral Scale */
+  --neutral-50: hsl(210, 14%, 98%);
+  --neutral-100: hsl(210, 12%, 95%);
+  --neutral-200: hsl(210, 10%, 90%);
+  --neutral-300: hsl(210, 8%, 82%);
+  --neutral-400: hsl(210, 6%, 62%);
+  --neutral-500: hsl(210, 6%, 48%);
+  --neutral-700: hsl(210, 6%, 28%);
+  --neutral-900: hsl(210, 8%, 12%);
+
+  /* Spacing (4px multiples) */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+
+  /* Elevation (Level 2 Shadow for Cards) */
+  --shadow-2: 0 2px 8px hsla(210, 30%, 15%, 0.08), 
+              0 4px 16px hsla(210, 30%, 15%, 0.06);
+}
+
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--neutral-50);
+  color: var(--neutral-900);
+  -webkit-font-smoothing: antialiased; /* Typography rule */
+}
+
+html {
+  scroll-behavior: smooth;
+}
