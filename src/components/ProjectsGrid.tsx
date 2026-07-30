@@ -1,6 +1,7 @@
 import ProjectsCard from "./ProjectsCard";
 import "./ProjectGrid.css"
 
+
 const Projects_Data = [
     {
         image: "src/assets/bible-verse-generator.png",
@@ -32,7 +33,8 @@ const Projects_Data = [
 
 export const ProjectsGrid = () => {
     return (
-        <div id="projects" className="projects-grid-container">
+        <section id="projects" className="projects-section">
+        <div className="projects-grid-container">
             {Projects_Data.map((project, index) => (
                 <ProjectsCard key={index}
                 image={project.image}
@@ -44,5 +46,8 @@ export const ProjectsGrid = () => {
                 />
             ))}
         </div>
+        </section>
     );
 };
+
+export default ProjectsGrid

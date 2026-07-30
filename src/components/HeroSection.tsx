@@ -3,6 +3,12 @@ import { ArrowDown } from 'lucide-react'
 import './HeroSection.css'
 
 export const HeroSection = () => {
+    const scrollToProjects = () => {
+        const projects = document.getElementById("projects")
+        if (projects) {
+            projects.scrollIntoView({ behavior: "smooth" })
+        }
+    }
     return (
         <section id="home" className="hero-container">
             <span className="hero-badge">
@@ -16,10 +22,12 @@ export const HeroSection = () => {
             </p>
 
             <div className="hero-button">
-                <button className="hero-primary-button">
+                <button className="hero-primary-button" onClick={scrollToProjects}>
                     View Projects <ArrowDown/>
                 </button>
             </div>
         </section>
     )
 }
+
+export default HeroSection
